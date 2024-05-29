@@ -5,10 +5,11 @@ const bodyParser = require("body-parser");
 const app = express();
 
 app.use(bodyParser.json());
+const userName = process.env.MONGO_USERNAME || "newUser31";
+const password = process.env.MONGO_PASSWORD || "newUser32";
 
 // MongoDB connection
-const mongoUrl =
-  process.env.MONGO_URL || "mongodb://localhost:27017/mydatabase";
+const mongoUrl = `mongodb+srv://${userName}:${password}@cluster0.v5bevdc.mongodb.net/mydatabase?retryWrites=true&w=majority&appName=Cluster0`;
 mongoose.connect(mongoUrl, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
