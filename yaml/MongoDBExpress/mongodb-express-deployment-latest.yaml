@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: mongodb-express
-        image: abhinagp/rest-api:1.0
+        image: abhinagp/rest-api:latest
         resources:
           requests:
             cpu: "200m"
